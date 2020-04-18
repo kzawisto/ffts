@@ -881,7 +881,7 @@ int
 ffts_generate_cosine_sine_pow2_32f(ffts_cpx_32f *const table, int table_size)
 {
     const ffts_cpx_64f *FFTS_RESTRICT ct;
-    const double_t *FFTS_RESTRICT hs;
+    const ffts_double_t *FFTS_RESTRICT hs;
     ffts_cpx_64f FFTS_ALIGN(16) w[32];
     int i, log_2, offset;
 
@@ -1070,7 +1070,7 @@ ffts_generate_table_1d_real_32f(struct _ffts_plan_t *const p,
 
     if (sign < 0) {
         for (i = 1; i < N/4; i++) {
-            float t0, t1, t2; 
+            float t0, t1, t2;
 
             /* calculate trailing zeros in index */
             log_2 = ffts_ctzl(i);
@@ -1096,7 +1096,7 @@ ffts_generate_table_1d_real_32f(struct _ffts_plan_t *const p,
         }
     } else {
         for (i = 1; i < N/4; i++) {
-            float t0, t1, t2; 
+            float t0, t1, t2;
 
             /* calculate trailing zeros in index */
             log_2 = ffts_ctzl(i);
